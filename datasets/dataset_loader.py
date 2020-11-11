@@ -2,15 +2,15 @@ from torch.utils.data import DataLoader
 from transforms import get_image_transform
 from .car_dataset import CarDataset
 import torch
-
+import config 
 
 def get_dataloader(shuffle=True):
     # config
-    img_folder_path = "./data/training_data"
-    csv_path = "./data/training_labels.csv"
-    batch_size = 16
-    num_worker = 4
-    split = 0.2
+    img_folder_path = config.img_folder
+    csv_path = config.csv_file
+    batch_size = config.batch_size
+    num_worker = config.workers
+    split = config.split
     
     dataset_transform = get_image_transform()
     
@@ -51,7 +51,6 @@ def get_dataloader(shuffle=True):
 
 
 def test():
-    #non
     a = 0
 
 if __name__ == '__main__':

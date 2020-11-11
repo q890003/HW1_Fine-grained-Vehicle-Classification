@@ -90,12 +90,19 @@ def train_model(model, dataloaders, dataset_sizes, criterion, optimizer, schedul
 
 
 if __name__ == '__main__':
-    print(config.epochs)
-    dataset_loaders, dataset_loaders_size = get_dataloader()
+    # Load dictionary of training and validation dataloader 
+    dataset_loaders, dataset_loaders_size, _ = get_dataloader()
     print(dataset_loaders_size)
+    # get gpu name
     device = utils.get_gpu()
+    
+    # get pretrained model
     model = get_resnet101_32x8d_pretrained_model().to(device)
+    
+    # loss function
     criterion = nn.CrossEntropyLoss()
+    
+    # optimizer
     optimizer_ft = optim.SGD(
         model.parameters(),
         lr=0.001,
@@ -103,6 +110,7 @@ if __name__ == '__main__':
         weight_decay=1e-3
     )
 
+    # learning rate scheduler
     exp_lr_scheduler = torch.optim.lr_scheduler.CyclicLR(
         optimizer_ft,
         base_lr=1e-4,
@@ -112,6 +120,7 @@ if __name__ == '__main__':
         gamma=0.85
     )
 
+    # training the model
     model_ft, state = train_model(
         model,
         dataset_loaders,
@@ -121,6 +130,11 @@ if __name__ == '__main__':
         exp_lr_scheduler,
         num_epochs=2
     )
+
+
+    print(state) # test
+
+    # save fine-tuned model
     torch.save(
         model_ft.state_dict(),
         config.ckpt_dir + config.model_name
