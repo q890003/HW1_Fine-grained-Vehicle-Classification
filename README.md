@@ -2,7 +2,7 @@
 Selected-Topics-in-Visual-Recognition-using-Deep-Learning HW1
 ---
 # Fine-grained Vehicle-Classification
-[Reproducing the work](#Reproducing the work)  
+[Reproducing the work](#Reproducingthework)  
 [Training](#Training)  
 [Inference](#Inference)  
 
