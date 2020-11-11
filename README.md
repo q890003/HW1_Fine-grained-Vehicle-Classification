@@ -28,7 +28,7 @@ To reproduct my submission without retrainig, do the following steps:
     ```
 2. clone this repository
     ``` 
-    git clone https://github.com/q890003/HW1_Fine-grained-Vehicle-Classification.git
+    $ git clone https://github.com/q890003/HW1_Fine-grained-Vehicle-Classification.git
     ```
 3. put **data/**, create **checkpoints/**, **results/** under the root dir of this project. 
     ```
