@@ -34,12 +34,12 @@ with open(csv_name, "w", newline="") as csvFile:
     _, _, dataset_map = get_dataloader()
 
     # get name list of testing images
-    allFileList = os.listdir(config.test_img_folder)
+    images_list = os.listdir(config.test_img_folder)
 
     # Read each testing image
-    for file in allFileList:
-        if os.path.isfile(config.test_img_folder + file):
-            path = config.test_img_folder + file
+    for img_name in images_list:
+        if os.path.isfile(config.test_img_folder + img_name):
+            path = config.test_img_folder + img_name
             img = Image.open(path).convert("RGB")
             dataset_transform = get_image_transform()
             img = dataset_transform["val"](img)
@@ -55,5 +55,5 @@ with open(csv_name, "w", newline="") as csvFile:
 
             # record predictions and convert labels from numbers back to string
             writer.writerow(
-                {"id": file.split(".jpg")[0], "label": dataset_map[predict[0]]}
+                {"id": img_name.split(".jpg")[0], "label": dataset_map[predict]}
             )
