@@ -1,0 +1,1 @@
+from .model import get_resnet101_32x8d_pretrained_model
