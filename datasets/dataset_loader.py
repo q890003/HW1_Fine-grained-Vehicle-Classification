@@ -2,7 +2,8 @@ from torch.utils.data import DataLoader
 from transforms import get_image_transform
 from .car_dataset import CarDataset
 import torch
-import config 
+import config
+
 
 def get_dataloader(shuffle=True):
     # config
@@ -11,23 +12,23 @@ def get_dataloader(shuffle=True):
     batch_size = config.batch_size
     num_worker = config.workers
     split = config.split
-    
+
     dataset_transform = get_image_transform()
-    
+
     myDataset = CarDataset(
         img_folder_path=img_folder_path,
         csv_path=csv_path,
-        transform=dataset_transform['train'],
+        transform=dataset_transform["train"],
     )
-    
+
     # Creating dataset for training and validation splits:
     valid_size = int(len(myDataset) * split)
     train_size = int(len(myDataset)) - valid_size
     train_dataset, validation_dataset = torch.utils.data.random_split(
         myDataset, [train_size, valid_size]
     )
-    
-    validation_dataset.transformations = dataset_transform['val']
+
+    validation_dataset.transformations = dataset_transform["val"]
 
     # Define data loader
     train_loader = torch.utils.data.DataLoader(
@@ -42,7 +43,7 @@ def get_dataloader(shuffle=True):
         shuffle=shuffle,
         num_workers=num_worker,
     )
-    
+
     dataset_loaders = {"train": train_loader, "val": validation_loader}
     dataset_sizes = {"train": train_size, "val": valid_size}
     dataset_map = myDataset.unique_classes
@@ -53,5 +54,6 @@ def get_dataloader(shuffle=True):
 def test():
     a = 0
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test()

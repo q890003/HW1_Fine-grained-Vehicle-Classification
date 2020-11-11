@@ -10,5 +10,5 @@ def get_gpu():
     return device
 
 
-if __name__ == '__main__':
-     print(get_gpu())
+if __name__ == "__main__":
+    print(get_gpu())

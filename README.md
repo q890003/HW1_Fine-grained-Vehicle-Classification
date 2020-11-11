@@ -1,11 +1,9 @@
-# Selected-Topics-in-Visual-Recognition-using-Deep-Learning HW1
 ---
-## Fine-grained Vehicle-Classification
-
-## Reproducing Submission
-To reproduct my submission without retrainig, do the following steps:
-
-
+Selected-Topics-in-Visual-Recognition-using-Deep-Learning HW1
+---
+# Fine-grained Vehicle-Classification
+[TOC]
+## Reproducing the work
 - Enviroment Installation
     1. install annoconda
     2. create python3.x version 
@@ -28,7 +26,7 @@ To reproduct my submission without retrainig, do the following steps:
     ```
 2. clone this repository
     ``` 
-    $ git clone https://github.com/q890003/HW1_Fine-grained-Vehicle-Classification.git
+    git clone https://github.com/q890003/HW1_Fine-grained-Vehicle-Classification.git
     ```
 3. put **data/**, create **checkpoints/**, **results/** under the root dir of this project. 
     ```
@@ -54,6 +52,8 @@ To reproduct my submission without retrainig, do the following steps:
         |- eval.py
         ...
     ```
+4. [Downoad fine-tuned parameters](https://drive.google.com/file/d/1Q5SbN6o7zoV5DUDaGPaBPQTEN1qTWbel/view?usp=sharing)
+    
 ## Training
 
 ```

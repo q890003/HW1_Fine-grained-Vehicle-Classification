@@ -40,7 +40,7 @@ class CarDataset(Dataset):
         )
         # Calculate len
         self.data_len = len(self.data_info.index)
-        
+
     def __getitem__(self, index):
         # --------------------------------------------
         # 1. Read from file (using numpy.fromfile, PIL.Image.open)
@@ -82,9 +82,9 @@ def test():
         csv_path="./data/training_labels.csv",
         transform=train_transform,
     )
-    
+
     print(len(dataset))
-          
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     test()
-    
