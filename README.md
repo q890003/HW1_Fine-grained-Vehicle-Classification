@@ -2,7 +2,10 @@
 Selected-Topics-in-Visual-Recognition-using-Deep-Learning HW1
 ---
 # Fine-grained Vehicle-Classification
-[TOC]
+[Reproducing the work](#Reproducing the work)  
+[Training](#Training)  
+[Inference](#Inference)  
+
 ## Reproducing the work
 - Enviroment Installation
     1. install annoconda
