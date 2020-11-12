@@ -34,7 +34,7 @@ Selected-Topics-in-Visual-Recognition-using-Deep-Learning HW1
 3. put **data/**, create **checkpoints/**, **results/** under the root dir of this project. 
     ```
     |- HW1_Fine-grained-Vehicle-Classification
-        |- data/
+        |- data/                            <- new folder/files to be downloaded
             |- training_data/
                 |- 000001.jpg
                 |- 000002.jpg
@@ -44,8 +44,9 @@ Selected-Topics-in-Visual-Recognition-using-Deep-Learning HW1
                 |- 000002.jpg
                 ...
             |- training_labels.csv
-        |- checkpoints/
-        |- results/
+        |- checkpoints/                      <- new folder to be created
+            |- resnext101_32x8d_aug_sg_lr_   <- new file downloaed from the step. 4
+        |- results/                          <- new folder to be created
         |- datasets/
         |- models/
         |- optimizers/ranger/
